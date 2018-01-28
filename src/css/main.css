@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  font-family: 'Merriweather', serif;
+  margin: 0;
+  padding: 0; }
+  body header {
+    display: flex;
+    height: 80px;
+    padding: 0 5%;
+    border-bottom: 1px solid #ccc;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.16); }
+    body header .logo-container {
+      flex: 1;
+      display: flex;
+      justify-content: center; }
+    body header nav {
+      display: flex;
+      flex: 3; }
+      body header nav ul {
+        flex: 1;
+        display: flex;
+        list-style: none;
+        align-items: center; }
+        body header nav ul a {
+          text-decoration: none;
+          color: #000;
+          -webkit-transition: color 0.6s;
+          /* Safari */ }
+          body header nav ul a:hover {
+            color: #0f6ecd; }
+        body header nav ul li {
+          flex: 1;
+          font-weight: bold;
+          text-align: center;
+          font-size: 17px;
+          text-transform: capitalize; }
+          body header nav ul li ul {
+            display: none; }
+    body header .call-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      body header .call-container .button {
+        font-family: 'Roboto', sans-serif;
+        background-color: #42B715;
+        border: #3AA013;
+        outline: none;
+        line-height: 40px;
+        text-align: center;
+        padding: 0 30px 0 15px;
+        display: inline-block;
+        border-radius: 5px;
+        color: #ffffff;
+        height: 40px;
+        text-decoration: none; }
+        body header .call-container .button img {
+          vertical-align: middle;
+          width: 25px; }
+
+@media (max-width: 720px) {
+  header nav ul {
+    display: none; }
+  header .call-container .button {
+    padding: 0 15px; }
+    header .call-container .button span {
+      display: none; } }
+
+@media (max-width: 720px) {
+  body header nav ul {
+    display: none; }
+  body header .call-container .button {
+    padding: 0 15px; }
+    body header .call-container .button span {
+      display: none; } }
