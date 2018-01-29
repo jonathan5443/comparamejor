@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="favicon.ico" rel="icon" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>ComparaMejor</title>
   <link rel="stylesheet" href="css/main.css">
@@ -15,6 +16,16 @@
       <img src="img/cm-logo.svg" alt="comparamejor">
     </div>
     <nav>
+      <div class="responsive-menu-icons">
+        <a class="home-icon-container" href="">
+          <img src="img/home.svg" alt="menu">
+          <span>Home</span>
+        </a>
+        <a class="close-menu-container" href="#">
+          <img src="img/close.svg" alt="menu">
+          <span>Cerrar</span>
+        </a>
+      </div>
       <ul class="menu-list">
       </ul>
     </nav>
@@ -24,10 +35,16 @@
         <span>(1) 756 1234</span>
       </a>
     </div>
+    <a class="burger-container" href="#">
+      <img src="img/menu.svg" alt="menu">
+    </a>
   </header>
+  <!--Scripts-->
+  <script src="js/menuEvents.js"></script>
   <script src="js/menu.js"></script>
   <script>
     const menu = new Menu();
+    menu.init()
   </script>
 </body>
 

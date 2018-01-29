@@ -2,7 +2,24 @@ class Menu {
   constructor() {
     this.url = "http://localhost:9000/menu"
     this.menuList = document.querySelector("nav > ul");
-    this.data = this._requestData();
+  }
+
+  init() {
+    fetch(this.url)
+      .then(response => {
+        if (response.status !== 200) {
+          alert(`Looks like there was a problem. Status Code: ${response.status}!`);
+          return
+        }
+        response.json().then(data => {
+          this.data = data;
+          this._createMenu()
+          const menuEvents = new MenuEvents();
+        });
+      })
+      .catch(error =>
+        alert(error)
+      );
   }
 
   _createMenu(parent = this.menuList, items = this.data) {
@@ -16,7 +33,9 @@ class Menu {
         li.appendChild(a);
         parent.appendChild(li);
         if (items[i].submenu.length > 0) {
+          a.classList.add('has-child');
           const ul = document.createElement("ul");
+          ul.classList.add('hide');
           li.appendChild(ul);
           this._createMenu(ul, items[i].submenu);
         }
@@ -24,20 +43,4 @@ class Menu {
     }
   }
 
-  _requestData() {
-    fetch(this.url)
-      .then(response => {
-        if (response.status !== 200) {
-          alert(`Looks like there was a problem. Status Code: ${response.status}!`);
-          return
-        }
-        response.json().then(data => {
-          this.data = data;
-          this._createMenu()
-        });
-      })
-      .catch(error =>
-        alert(error)
-      );
-  }
 }
