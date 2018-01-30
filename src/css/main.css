@@ -31,11 +31,28 @@ body {
           font-weight: bold;
           text-align: center;
           font-size: 17px;
+          position: relative;
           text-transform: capitalize; }
           body header nav ul li ul {
-            display: none; }
-            body header nav ul li ul li ul {
-              display: none; }
+            position: absolute;
+            display: flex;
+            left: 0;
+            margin-top: 30px;
+            right: 0;
+            padding: 0;
+            background: #fff;
+            flex-direction: column;
+            border-bottom: 1px solid #ccc;
+            -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.16);
+            -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.16); }
+            body header nav ul li ul li {
+              padding: 8px 0;
+              flex: 1;
+              width: 100%; }
+              body header nav ul li ul li ul {
+                margin-top: 10px;
+                display: none; }
         body header nav ul a {
           text-decoration: none;
           color: #000;
@@ -78,9 +95,9 @@ body {
       display: none;
       flex: 1;
       justify-content: flex-end; }
-  body .show {
+  body .show-desktop {
     display: flex; }
-  body .hide {
+  body .hide-desktop {
     display: none; }
 
 @media (max-width: 720px) {
@@ -105,7 +122,12 @@ body {
         flex: auto;
         padding: 15px 0; }
         body header nav ul li ul {
-          padding-top: 15px; }
+          position: relative;
+          box-shadow: none;
+          padding-top: 15px;
+          border-bottom: none;
+          background: transparent;
+          margin-top: 0; }
           body header nav ul li ul a {
             color: #acacac;
             font-size: 12px; }
@@ -143,4 +165,8 @@ body {
     body header .call-container .button span {
       display: none; }
   body header .burger-container {
-    display: flex !important; } }
+    display: flex !important; }
+  body .show-mobile {
+    display: flex; }
+  body .hide-mobile {
+    display: none; } }

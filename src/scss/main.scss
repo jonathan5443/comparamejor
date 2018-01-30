@@ -34,11 +34,27 @@ body{
           font-weight: bold;
           text-align: center;
           font-size: 17px;
+          position: relative;
           text-transform: capitalize;
           ul{
-            display: none;
+            position: absolute;
+            display: flex;
+            left: 0;
+            margin-top: 30px;
+            right: 0;
+            padding: 0;
+            background: #fff;
+            flex-direction: column;
+            border-bottom: 1px solid #ccc;
+            -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.16);
+            -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.16);
+            box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.16);
             li{
+              padding: 8px 0;
+              flex: 1;
+              width: 100%;
               ul{
+                margin-top: 10px;
                 display: none;
               }
             }
@@ -97,10 +113,10 @@ body{
       justify-content: flex-end;
     }
   }
-  .show{
+  .show-desktop{
     display: flex;
   }
-  .hide{
+  .hide-desktop{
     display: none;
   }
 }
@@ -129,7 +145,12 @@ body{
             flex: auto;
             padding: 15px 0;
             ul{
+              position: relative;
+              box-shadow: none;
               padding-top: 15px;
+              border-bottom: none;
+              background: transparent;
+              margin-top:0; 
               a{
                 color: #acacac;
                 font-size: 12px;
@@ -190,6 +211,12 @@ body{
       .burger-container{
         display: flex !important;
       }
+    }
+    .show-mobile{
+      display: flex;
+    }
+    .hide-mobile{
+      display: none;
     }
   }
 }

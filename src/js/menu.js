@@ -35,7 +35,8 @@ class Menu {
         if (items[i].submenu.length > 0) {
           a.classList.add('has-child');
           const ul = document.createElement("ul");
-          ul.classList.add('hide');
+          ul.classList.add('hide-desktop');
+          ul.classList.add('hide-mobile');
           li.appendChild(ul);
           this._createMenu(ul, items[i].submenu);
         }
